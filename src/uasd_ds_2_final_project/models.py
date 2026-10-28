@@ -32,7 +32,7 @@ def build_dummy_pipeline(
     """
     Construye el pipeline de línea base (Baseline) usando DummyClassifier.
 
-    Propósito didáctico:
+    Propósito:
     --------------------
     En datos desbalanceados (como este dataset bancario con ~89% de 'no'),
     un modelo ingenuo que siempre prediga 'no' obtendrá un 89% de Accuracy.
@@ -64,8 +64,6 @@ def build_logistic_regression_pipeline(
     """
     Construye el pipeline para Regresión Logística.
 
-    Propósito didáctico:
-    --------------------
     La Regresión Logística es el estándar de la industria financiera para
     clasificación tabular binaria por su alta interpretabilidad (pesos/coeficientes).
 
@@ -105,8 +103,6 @@ def build_random_forest_pipeline(
     """
     Construye el pipeline para Random Forest (Bosque Aleatorio).
 
-    Propósito didáctico:
-    --------------------
     Random Forest combina múltiples árboles de decisión mediante Bagging.
     Es capaz de capturar relaciones no lineales y complejas entre los indicadores
     macroeconómicos y el perfil del cliente sin asumir que los datos siguen
