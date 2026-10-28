@@ -71,7 +71,7 @@ def load_raw_data(filepath: Path | str) -> pd.DataFrame:
     """
     Carga el archivo CSV crudo desde la ruta especificada.
     
-    Nota Jr Dev: El dataset de Bank Marketing utiliza punto y coma (';')
+   El dataset de Bank Marketing utiliza punto y coma (';')
     como separador en lugar de la coma tradicional (',').
     """
     path = Path(filepath)
@@ -164,7 +164,6 @@ def split_data(
     """
     Divide los datos en conjuntos de Entrenamiento (Train) y Prueba (Test).
     
-    Nota Jr Dev:
     Usamos 'stratify=y' porque en marketing bancario las clases están desbalanceadas
     (aprox. 89% dijeron 'no' y solo 11% dijeron 'yes').
     La estratificación garantiza que tanto en Train como en Test se mantenga
