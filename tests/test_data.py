@@ -24,27 +24,27 @@ from uasd_ds_2_final_project.data import (
 def _create_sample_df() -> pd.DataFrame:
     """Crea un DataFrame sintético con todas las columnas obligatorias para pruebas."""
     return pd.DataFrame({
-        "age": [30, 40, 50, 60],
-        "job": ["admin.", "technician", "services", "blue-collar"],
-        "marital": ["married", "single", "divorced", "married"],
-        "education": ["university.degree", "high.school", "basic.9y", "professional.course"],
-        "default": ["no", "no", "unknown", "no"],
-        "housing": ["yes", "no", "yes", "no"],
-        "loan": ["no", "yes", "no", "no"],
-        "contact": ["cellular", "cellular", "telephone", "cellular"],
-        "month": ["may", "jun", "jul", "aug"],
-        "day_of_week": ["mon", "tue", "wed", "thu"],
-        "campaign": [1, 2, 1, 3],
-        "pdays": [999, 999, 6, 999],
-        "previous": [0, 0, 1, 0],
-        "poutcome": ["nonexistent", "nonexistent", "success", "nonexistent"],
-        "emp.var.rate": [1.1, 1.1, -1.8, 1.4],
-        "cons.price.idx": [93.994, 93.994, 92.893, 93.444],
-        "cons.conf.idx": [-36.4, -36.4, -46.2, -36.1],
-        "euribor3m": [4.857, 4.857, 1.281, 4.963],
-        "nr.employed": [5191.0, 5191.0, 5099.1, 5228.1],
-        "duration": [261, 149, 226, 151],  # Columna con fuga de datos
-        "y": ["no", "no", "yes", "no"],   # Variable objetivo
+        "age": [30, 40, 50, 60, 35, 48],
+        "job": ["admin.", "technician", "services", "blue-collar", "admin.", "management"],
+        "marital": ["married", "single", "divorced", "married", "single", "married"],
+        "education": ["university.degree", "high.school", "basic.9y", "professional.course", "university.degree", "university.degree"],
+        "default": ["no", "no", "unknown", "no", "no", "no"],
+        "housing": ["yes", "no", "yes", "no", "yes", "yes"],
+        "loan": ["no", "yes", "no", "no", "no", "no"],
+        "contact": ["cellular", "cellular", "telephone", "cellular", "cellular", "telephone"],
+        "month": ["may", "jun", "jul", "aug", "may", "jun"],
+        "day_of_week": ["mon", "tue", "wed", "thu", "fri", "mon"],
+        "campaign": [1, 2, 1, 3, 1, 2],
+        "pdays": [999, 999, 6, 999, 999, 999],
+        "previous": [0, 0, 1, 0, 0, 0],
+        "poutcome": ["nonexistent", "nonexistent", "success", "nonexistent", "nonexistent", "nonexistent"],
+        "emp.var.rate": [1.1, 1.1, -1.8, 1.4, 1.1, 1.1],
+        "cons.price.idx": [93.994, 93.994, 92.893, 93.444, 93.994, 93.994],
+        "cons.conf.idx": [-36.4, -36.4, -46.2, -36.1, -36.4, -36.4],
+        "euribor3m": [4.857, 4.857, 1.281, 4.963, 4.857, 4.857],
+        "nr.employed": [5191.0, 5191.0, 5099.1, 5228.1, 5191.0, 5191.0],
+        "duration": [261, 149, 226, 151, 95, 300],  # Columna con fuga de datos
+        "y": ["no", "no", "yes", "no", "yes", "no"],   # Variable objetivo con 2 'yes' y 4 'no'
     })
 
 
