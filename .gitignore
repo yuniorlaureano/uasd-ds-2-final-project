@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Artefactos generados por scripts/train.py (binarios regenerables, no versionables)
+models/*.joblib

@@ -37,3 +37,12 @@ Todos los modelos están integrados en `Pipeline` de scikit-learn con preprocesa
   ```bash
   uv run pytest
   ```
+
+## 6. Aplicación Web (Streamlit)
+Interfaz que permite estimar en vivo la probabilidad de suscripción de un cliente potencial:
+- **Generar el modelo y levantar la aplicación:**
+  ```bash
+  uv run python scripts/train.py
+  uv run streamlit run src/uasd_ds_2_final_project/app.py
+  ```
+- **Documentación de la aplicación:** [`docs/streamlit_app.md`](docs/streamlit_app.md)
