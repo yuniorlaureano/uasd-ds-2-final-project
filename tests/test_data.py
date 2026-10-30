@@ -101,6 +101,25 @@ def test_target_is_binary_numeric():
     assert y.iloc[0] == 0  # 'no' -> 0
 
 
+def test_target_accepts_processed_binary_labels():
+    """Verifica compatibilidad con el target binario del dataset procesado."""
+    df = _create_sample_df()
+    df["y"] = [0, 0, 1, 0, 1, 0]
+
+    _, y, _, _ = prepare_features_and_target(df)
+
+    assert y.tolist() == [0, 0, 1, 0, 1, 0]
+
+
+def test_target_rejects_unexpected_labels():
+    """No convierte silenciosamente etiquetas desconocidas en la clase negativa."""
+    df = _create_sample_df()
+    df.loc[0, "y"] = "maybe"
+
+    with pytest.raises(ValueError, match="Etiquetas no válidas"):
+        prepare_features_and_target(df)
+
+
 def test_split_data_preserves_total_rows():
     """Verifica que la división train/test no pierda registros."""
     df = _create_sample_df()

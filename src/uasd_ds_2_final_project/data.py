@@ -149,8 +149,13 @@ def prepare_features_and_target(
 
     X = df[selected_columns].copy()
     
-    # Convertimos la variable objetivo a binaria: 'yes' -> 1, 'no' -> 0
-    y = (df[TARGET_COLUMN].astype(str).str.strip().str.lower() == "yes").astype(int)
+    # Acepta tanto las etiquetas fuente como la codificación del archivo procesado.
+    target_labels = df[TARGET_COLUMN].astype(str).str.strip().str.lower()
+    target_mapping = {"yes": 1, "no": 0, "1": 1, "0": 0}
+    invalid_labels = sorted(set(target_labels.unique()) - target_mapping.keys())
+    if invalid_labels:
+        raise ValueError(f"Etiquetas no válidas en '{TARGET_COLUMN}': {invalid_labels}")
+    y = target_labels.map(target_mapping).astype(int)
 
     return X, y, numeric_features, categorical_features
 
