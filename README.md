@@ -46,3 +46,23 @@ Interfaz que permite estimar en vivo la probabilidad de suscripción de un clien
   uv run streamlit run src/uasd_ds_2_final_project/app.py
   ```
 - **Documentación de la aplicación:** [`docs/streamlit_app.md`](docs/streamlit_app.md)
+
+## 7. Integración, procesamiento y auditoría de datos
+La fuente completa y su diccionario original están integrados en `data/raw/`:
+`bank-additional-full.csv` (separador `;`) y `bank-additional-names.txt`.
+
+- **Preparar el dataset y generar la auditoría reproducible:**
+  ```bash
+  uv run python scripts/audit_data.py
+  ```
+- **Salidas:** `data/processed/bank-additional-clean.csv` y `reports/data_audit.json`.
+- **Ficha del dataset:** [`docs/ficha_bank_marketing.md`](docs/ficha_bank_marketing.md).
+- **Entrenar usando el archivo procesado (opcional):**
+  ```bash
+  uv run python scripts/train.py --data-path data/processed/bank-additional-clean.csv
+  ```
+
+El procesamiento recorta espacios en campos de texto y codifica `y` como `no = 0`
+y `yes = 1`. Conserva las categorías `unknown`, las 12 filas exactamente repetidas
+detectadas y la columna `duration`; esta última se excluye del pipeline de
+predicción porque solo se conoce después de la llamada.

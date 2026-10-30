@@ -1,0 +1,195 @@
+{
+  "source_file": "data/raw/bank-additional-full.csv",
+  "source_sha256": "74adfc578bf77a7ff4bb1ba4a9f8709d9e3c6907342959c2c8416847e0afb4d8",
+  "source_shape": {
+    "rows": 41188,
+    "columns": 21
+  },
+  "columns": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "housing",
+    "loan",
+    "contact",
+    "month",
+    "day_of_week",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome",
+    "emp.var.rate",
+    "cons.price.idx",
+    "cons.conf.idx",
+    "euribor3m",
+    "nr.employed",
+    "y"
+  ],
+  "dtypes": {
+    "age": "int64",
+    "job": "str",
+    "marital": "str",
+    "education": "str",
+    "default": "str",
+    "housing": "str",
+    "loan": "str",
+    "contact": "str",
+    "month": "str",
+    "day_of_week": "str",
+    "duration": "int64",
+    "campaign": "int64",
+    "pdays": "int64",
+    "previous": "int64",
+    "poutcome": "str",
+    "emp.var.rate": "float64",
+    "cons.price.idx": "float64",
+    "cons.conf.idx": "float64",
+    "euribor3m": "float64",
+    "nr.employed": "float64",
+    "y": "str"
+  },
+  "missing_values_by_column": {
+    "age": 0,
+    "job": 0,
+    "marital": 0,
+    "education": 0,
+    "default": 0,
+    "housing": 0,
+    "loan": 0,
+    "contact": 0,
+    "month": 0,
+    "day_of_week": 0,
+    "duration": 0,
+    "campaign": 0,
+    "pdays": 0,
+    "previous": 0,
+    "poutcome": 0,
+    "emp.var.rate": 0,
+    "cons.price.idx": 0,
+    "cons.conf.idx": 0,
+    "euribor3m": 0,
+    "nr.employed": 0,
+    "y": 0
+  },
+  "missing_values_total": 0,
+  "non_finite_numeric_by_column": {
+    "age": 0,
+    "duration": 0,
+    "campaign": 0,
+    "pdays": 0,
+    "previous": 0,
+    "emp.var.rate": 0,
+    "cons.price.idx": 0,
+    "cons.conf.idx": 0,
+    "euribor3m": 0,
+    "nr.employed": 0
+  },
+  "exact_duplicate_rows": 12,
+  "duplicate_handling": "Preserved: without a record identifier, exact matches cannot be confirmed as erroneous duplicate observations.",
+  "unknown_category_counts": {
+    "job": 330,
+    "marital": 80,
+    "education": 1731,
+    "default": 8597,
+    "housing": 990,
+    "loan": 990,
+    "contact": 0,
+    "month": 0,
+    "day_of_week": 0,
+    "poutcome": 0,
+    "y": 0
+  },
+  "target_counts": {
+    "no": 36548,
+    "yes": 4640
+  },
+  "target_percentages": {
+    "no": 88.7346,
+    "yes": 11.2654
+  },
+  "numeric_summary_min_median_max": {
+    "age": {
+      "min": 17.0,
+      "median": 38.0,
+      "max": 98.0
+    },
+    "duration": {
+      "min": 0.0,
+      "median": 180.0,
+      "max": 4918.0
+    },
+    "campaign": {
+      "min": 1.0,
+      "median": 2.0,
+      "max": 56.0
+    },
+    "pdays": {
+      "min": 0.0,
+      "median": 999.0,
+      "max": 999.0
+    },
+    "previous": {
+      "min": 0.0,
+      "median": 0.0,
+      "max": 7.0
+    },
+    "emp.var.rate": {
+      "min": -3.4,
+      "median": 1.1,
+      "max": 1.4
+    },
+    "cons.price.idx": {
+      "min": 92.201,
+      "median": 93.749,
+      "max": 94.767
+    },
+    "cons.conf.idx": {
+      "min": -50.8,
+      "median": -41.8,
+      "max": -26.9
+    },
+    "euribor3m": {
+      "min": 0.634,
+      "median": 4.857,
+      "max": 5.045
+    },
+    "nr.employed": {
+      "min": 4963.6,
+      "median": 5191.0,
+      "max": 5228.1
+    }
+  },
+  "potential_iqr_outliers": {
+    "method": "Outside Q1 - 1.5*IQR or Q3 + 1.5*IQR; flagged, not removed.",
+    "counts_by_column": {
+      "age": 469,
+      "duration": 2963,
+      "campaign": 2406,
+      "pdays": 1515,
+      "previous": 5625,
+      "emp.var.rate": 0,
+      "cons.price.idx": 0,
+      "cons.conf.idx": 447,
+      "euribor3m": 0,
+      "nr.employed": 0
+    }
+  },
+  "processing": {
+    "output_file": "data/processed/bank-additional-clean.csv",
+    "output_shape": {
+      "rows": 41188,
+      "columns": 21
+    },
+    "target_encoding": {
+      "no": 0,
+      "yes": 1
+    },
+    "text_processing": "Leading and trailing whitespace removed.",
+    "rows_removed": 0,
+    "duration": "Retained in the processed file for traceability; excluded by the model feature-preparation pipeline to prevent target leakage.",
+    "unknown_categories": "Preserved as explicit category values."
+  }
+}
