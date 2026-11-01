@@ -37,6 +37,8 @@ Todos los modelos están integrados en `Pipeline` de scikit-learn con preprocesa
   ```bash
   uv run pytest
   ```
+- **16 casos unitarios adicionales:** cobertura y ejecución en
+  [`docs/pruebas_unitarias.md`](docs/pruebas_unitarias.md).
 
 ## 6. Aplicación Web (Streamlit)
 Interfaz que permite estimar en vivo la probabilidad de suscripción de un cliente potencial:
